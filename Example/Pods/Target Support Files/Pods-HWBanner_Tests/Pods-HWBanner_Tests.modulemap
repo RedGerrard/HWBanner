@@ -1,0 +1,6 @@
+framework module Pods_HWBanner_Tests {
+  umbrella header "Pods-HWBanner_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

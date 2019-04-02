@@ -1,0 +1,6 @@
+framework module HWBanner {
+  umbrella header "HWBanner-umbrella.h"
+
+  export *
+  module * { export * }
+}

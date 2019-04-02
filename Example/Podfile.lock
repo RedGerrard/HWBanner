@@ -1,0 +1,25 @@
+PODS:
+  - HWBanner (0.1.0):
+    - SDWebImage
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+
+DEPENDENCIES:
+  - HWBanner (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  HWBanner:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HWBanner: 190ca901ca847c19584739738c116f5c2e909f83
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+
+PODFILE CHECKSUM: d82e6c69f5b79bc85aae80ab9eedcfb3fe68118f
+
+COCOAPODS: 1.6.1
