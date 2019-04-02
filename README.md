@@ -3,7 +3,7 @@
  ## How To Use
  * 代码加载
  ```
- #import "HWBanner.h"
+ #import <HWBanner.h>
  ...
  HWBanner *banner = [[HWBanner alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 180)];
  //设置图片数据源，本地或者接口返回，本地时为图片的名字，接口返回时为图片的下载地址
@@ -20,7 +20,7 @@
  ```
  * Nib加载
  ```
- #import "HWBanner.h"
+ #import <HWBanner.h>
  ...
  @property (weak, nonatomic) IBOutlet HWBanner *banner;
  ...
