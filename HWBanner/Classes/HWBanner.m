@@ -7,7 +7,7 @@
 //
 
 #import "HWBanner.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 static int const kImageViewCount = 3;
 
