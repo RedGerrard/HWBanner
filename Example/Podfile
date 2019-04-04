@@ -5,6 +5,7 @@ platform :ios, '8.0'
 target 'HWBanner_Example' do
   pod 'HWBanner', :path => '../'
 
+  pod 'SDWebImage'
   target 'HWBanner_Tests' do
     inherit! :search_paths
 

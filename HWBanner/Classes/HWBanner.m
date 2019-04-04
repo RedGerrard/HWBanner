@@ -7,7 +7,6 @@
 //
 
 #import "HWBanner.h"
-#import "UIImageView+WebCache.h"
 
 static int const kImageViewCount = 3;
 
@@ -164,17 +163,11 @@ static int const kImageViewCount = 3;
         
         imgView.tag = index;
         
-        NSString *imgName = _imgArray[index];
-        if ([self verifyURL:imgName]) {
-            
-            NSURL *url = [NSURL URLWithString:imgName];
-            if (url) {
-                [imgView sd_setImageWithURL:url placeholderImage:_placeholder_image];
-            }
-            
-        } else {
-            imgView.image = [UIImage imageNamed:imgName];
+        NSString *imgSource = _imgArray[index];
+        if (self.loadBlock) {
+            self.loadBlock(imgView, imgSource);
         }
+        
     }
     if (_isDirectionPortrait) {
         [_scrollView setContentOffset:CGPointMake(0, _scrollView.frame.size.height)];
@@ -183,15 +176,7 @@ static int const kImageViewCount = 3;
     }
     
 }
-
--(BOOL)verifyURL:(NSString *)url{
-    NSString *pattern = @"((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?";
-    
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
-    
-    return [pred evaluateWithObject:url];
-}
-
+ 
 -(void)startTimer{
     
     dispatch_resume(_timer);

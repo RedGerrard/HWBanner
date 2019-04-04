@@ -17,6 +17,8 @@ typedef enum : NSUInteger{
     PageControlPositionRight,
 }PageControlPosition;
 
+typedef void(^LoadImageBlock)(UIImageView *imageView, NSString *source);
+
 typedef void(^imgClick)(NSInteger);
 
 @interface HWBanner : UIView
@@ -42,6 +44,11 @@ typedef void(^imgClick)(NSInteger);
 @property(nonatomic, assign)PageControlPosition pageControlPosition;
 
 /**
+ * 图片的加载事件
+ */
+@property(nonatomic, copy)LoadImageBlock loadBlock;
+
+/**
  * 图片的点击事件
  */
 @property(nonatomic, copy)imgClick imgClick;
@@ -56,8 +63,4 @@ typedef void(^imgClick)(NSInteger);
  */
 @property (nonatomic, strong) UIColor *pageControlCurrentColor;
 
-/**
- 占位图，默认空
- */
-@property (nonatomic, strong) UIImage *placeholder_image;
 @end
