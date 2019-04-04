@@ -34,6 +34,14 @@
  ...
  //设置图片数据源
  banner.imgArray = @[@"abc",@"def",@"ghi",@"ojk"];
+ //设置图片的加载事件
+ banner.loadBlock = ^(UIImageView *imageView, NSString *source) {
+ //imageView.image = [UIImage imageNamed:source];
+ NSURL *url = [NSURL URLWithString:source];
+ if (url) {
+ [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"xxxxx"]];
+ }
+ };
  //设置点击事件
  banner.imgClick = ^(NSInteger tag) {
  NSLog(@"%ld",(long)tag);
